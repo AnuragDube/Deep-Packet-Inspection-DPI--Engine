@@ -1,3 +1,5 @@
+# Module for classifying applications based on packet analysis
+
 APP_PATTERNS = [
     ("YouTube",  ["youtube.com", "googlevideo.com", "ytimg.com"]),
     ("Facebook", ["facebook.com", "fbcdn.net", "instagram.com"]),
