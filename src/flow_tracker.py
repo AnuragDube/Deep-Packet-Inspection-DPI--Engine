@@ -65,8 +65,9 @@ class FlowTracker:
         if sni and not flow.sni:
             flow.sni = sni
 
-        # Set app only if it's not Unknown and not already set
-        if app != "Unknown" and flow.app == "Unknown":
+        # Set a more specific app name only when available
+        generic = {"Unknown", "HTTPS", "HTTP", "DNS"}
+        if app not in generic and flow.app in generic:
             flow.app = app
 
     def all_flows(self):
